@@ -42,7 +42,7 @@ for connectivity_i=1:3
         rng(1)
         runtime=tic;
         rate_const_interval=[rate_const_interval_vec(j) rate_const_interval_vec(j)];
-        [~,~,rate_constants] = GenRandChemReac_EI(Nspecies,[],rate_const_interval,[],W);
+        [~,~,rate_constants] = GenConstants_EI(Nspecies,[],rate_const_interval,[],W);
         if rate_constants.Kdenum_E(1,2)>0
             rate_constants.Kdenum_E(1,2)=asymm_baseline_k;
         end
