@@ -1,4 +1,5 @@
-%% first dimension of saved H_sparse_all, etc is rate constant! second is equilibrium
+%% Generating data for stationary distribution of two dimensional birth-death processes with hyperbolic inhibitory and excitatory connections
+%% NOTE: first dimension of the saved H_sparse_all, etc is for the different rate constants, second is for different equilibria
 clear all
 clc
 addpath(genpath('/Users/mj555l/Dropbox (Cambridge University)/Monika-Tim/Synaptic switch paper/Random chemical systems/Gillespie_and_Distribution'))
@@ -6,8 +7,8 @@ addpath(genpath('/Users/mj555l/Dropbox (Cambridge University)/Monika-Tim/Synapti
 addpath(genpath('/Users/mj555l/Dropbox (Cambridge University)/Monika-Tim/Synaptic switch paper/Random chemical systems//Mode search'))
 
 Nspecies=2;
-N_steps=100000;
-N_realisations=100;
+N_steps=500000;
+N_realisations=50;
 
 %% equilibrium point 
 xbar_min=2;
@@ -30,8 +31,8 @@ poolobj = gcp('nocreate');
 delete(poolobj)
 parpool(5)
 
-%% Asymmetric cases
-for connectivity_i=2:2 
+%% asymmetric cases
+for connectivity_i=1:3
     W=W_all{connectivity_i};
     H_sparse_all=cell(nrate_const,N_xbar);
     W_sparse_all=cell(nrate_const,N_xbar);
@@ -70,7 +71,7 @@ end
 %% Symmetric cases
 FileName_vec=["Data_II_sym.mat","Data_IE_sym.mat","Data_EE_sym.mat"];
 
-for connectivity_i=2:2 %architectures : I-I, I-E, E-E
+for connectivity_i=1:3 %architectures : I-I, I-E, E-E
     W=W_all{connectivity_i};
     H_sparse_all=cell(nrate_const,N_xbar);
     W_sparse_all=cell(nrate_const,N_xbar);
