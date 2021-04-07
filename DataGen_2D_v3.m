@@ -29,7 +29,7 @@ FileName_vec=["Data_II_asym.mat","Data_IE_asym.mat","Data_EE_asym.mat"];
 
 poolobj = gcp('nocreate');
 delete(poolobj)
-parpool(5)
+% parpool(5)
 
 %% asymmetric cases
 for connectivity_i=1:3
