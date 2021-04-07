@@ -81,7 +81,7 @@ for connectivity_i=1:3 %architectures : I-I, I-E, E-E
         rng(1)
         runtime=tic;
         rate_const_interval=[rate_const_interval_vec(j) rate_const_interval_vec(j)];
-        [~,~,rate_constants] = GenRandChemReac_EI(Nspecies,[],rate_const_interval,rIE,W);
+        [~,~,rate_constants] = GenRandChemReac_EI(Nspecies,[],rate_const_interval,[],W);
         %% Simulation and mode detection
         for k=1:N_xbar
             xbar_const=xbar_vec(k);
