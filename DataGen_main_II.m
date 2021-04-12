@@ -4,9 +4,6 @@
 
 clear all
 clc
-addpath(genpath('/Users/mj555l/Dropbox (Cambridge University)/Monika-Tim/Synaptic switch paper/Random chemical systems/Gillespie_and_Distribution'))
-addpath(genpath('/Users/mj555l/Dropbox (Cambridge University)/Monika-Tim/Synaptic switch paper/Random chemical systems//shared functions'))
-addpath(genpath('/Users/mj555l/Dropbox (Cambridge University)/Monika-Tim/Synaptic switch paper/Random chemical systems//Mode search'))
 
 poolobj = gcp('nocreate');
 delete(poolobj)
@@ -31,7 +28,7 @@ N_xbar=length(xbar_vec);
 rate_const_interval_vec=[0.1 0.07 0.05 0.03 0.01 0.007 0.005 0.003];
 nrate_const=length(rate_const_interval_vec);
 
-for nA=2:7
+for nA=6:7
     rng(1)
     runtime=tic;  
     W_nA = W_list_v5(Nspecies,nA); % connectivity structure
