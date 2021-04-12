@@ -5,10 +5,6 @@
 clear all
 clc
 
-poolobj = gcp('nocreate');
-delete(poolobj)
-parpool(5)
-
 warning ('off','all')
 Nspecies=3;
 N_realisations=200; % number of realizations
