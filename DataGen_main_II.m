@@ -47,9 +47,9 @@ for nA=6:7
                 W_sparse{xbar_ind,k} = WW_sparse./sum(WW_sparse); %normalization of the weights
                 [Weighted_Cov{xbar_ind,k}, Weighted_Mean{xbar_ind,k}] = Sparse_Distribution_weighted_cov(H_sparse{xbar_ind,k},W_sparse{xbar_ind,k});
                 clear('X','T','WW_sparse')
+                toc(runtime)
             end
             disp(strcat('nA=: ',num2str(nA),' out of 7. W: ',num2str(nA_i),' out of ',num2str(length(W_nA)),'. k=',num2str(k)))
-            toc(runtime)
             FileName=strcat('Data_A',num2str(nA),'_W',num2str(nA_i),'.mat');
             save(FileName,'H_sparse','W_sparse','W','H_sparse_1D','Weighted_Cov','Weighted_Mean','rate_const_interval_vec','xbar_vec','N_steps','N_realisations')
         end
